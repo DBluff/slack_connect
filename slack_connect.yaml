@@ -1,0 +1,13 @@
+name: slack_connect
+
+author: Douglas Bluff
+
+version: 1.0
+
+desc: Designed to Integrate with Slack to Provide Admins with real-time information
+
+info_url: http://austincc.edu
+
+config_url: /plugins/slack_connect/pages/setup.php
+
+default_priority: 500
