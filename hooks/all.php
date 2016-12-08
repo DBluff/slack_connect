@@ -12,12 +12,12 @@ function HookSlack_connectAllaftersaveresourcedata()
     if ($curPage === $clickNext && $uploadPerm === 'ref=-4'){
 
     $username = "ResourceSpace";
-    $room = "asset-management";
+    $room = "asset-management"; // Change to the room You want the message to appear in.
     $icon = ":frame_with_picture:";
     $color = "good";
     $title = "New Assets Incoming for Review";
     $text = "New Assets Incoming for Review";
-    $review = urlencode("URL OF REVIEW PAGE");
+    $review = urlencode("./resourcespace/pages/search.php?search=&archive=-1&resetrestypes=true"); // Change this to the url of the page you approve pending assets on
 
     $attachment = array(
         'fallback' => $text,
@@ -32,7 +32,7 @@ function HookSlack_connectAllaftersaveresourcedata()
             "icon_emoji" => $icon,
             "attachments" => array($attachment)
         ));
-    $url = "YOUR SLACK WEBHOOK URL";
+    $url = "https://hooks.slack.com/services/../../../"; // Change this to your Slack Webhook URL
 
 
     $ch = curl_init();
