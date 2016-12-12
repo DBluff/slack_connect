@@ -5,19 +5,24 @@
 
 function HookSlack_connectAllaftersaveresourcedata()
 {
-    $curPage = basename($_SERVER['PHP_SELF']);
-    $clickNext = 'edit.php';
-    $uploadPerm = strtok($_SERVER['QUERY_STRING'], '&');
+    if (getval("editthis_status","")=="true" && getval("status","")==-1){
 
-    if ($curPage === $clickNext && $uploadPerm === 'ref=-4'){
+    global $slack_connect_webhook;
+    global $slack_connect_username;
+    global $slack_connect_room;
+    global $slack_connect_icon;
+    global $slack_connect_color;
+    global $slack_connect_title;
+    global $slack_connect_link;
+    global $slack_connect_fallback;
 
-    $username = "ResourceSpace";
-    $room = "asset-management"; // Change to the room You want the message to appear in.
-    $icon = ":frame_with_picture:";
-    $color = "good";
-    $title = "New Assets Incoming for Review";
-    $text = "New Assets Incoming for Review";
-    $review = urlencode("./resourcespace/pages/search.php?search=&archive=-1&resetrestypes=true"); // Change this to the url of the page you approve pending assets on
+    $username = $slack_connect_username;
+    $room = $slack_connect_room;
+    $icon = ":" . $slack_connect_icon . ":";
+    $color = $slack_connect_color;
+    $title = $slack_connect_title;
+    $text = $slack_connect_fallback;
+    $review = urlencode($slack_connect_link);
 
     $attachment = array(
         'fallback' => $text,
@@ -32,7 +37,7 @@ function HookSlack_connectAllaftersaveresourcedata()
             "icon_emoji" => $icon,
             "attachments" => array($attachment)
         ));
-    $url = "https://hooks.slack.com/services/../../../"; // Change this to your Slack Webhook URL
+    $url = $slack_connect_webhook;
 
 
     $ch = curl_init();
