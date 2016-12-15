@@ -1,13 +1,13 @@
-name: menu_maker
+name: slack_connect
 
 author: Douglas Bluff
 
 version: 1.0
 
-desc: Plugin to add menu items to the top nav
+desc: Designed to Integrate with Slack to Provide Admins with real-time information
 
-info_url: https://github.com/AustinCommunityCollege/
+info_url: https://github.com/AustinCommunityCollege/SlackResourceSpaceInt
 
-config_url: /plugins/menu_maker/pages/setup.php
+config_url: /plugins/slack_connect/pages/setup.php
 
 default_priority: 500
