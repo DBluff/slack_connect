@@ -5,6 +5,7 @@ author: Douglas Bluff
 version: 1.0
 
 desc: Designed to Integrate with Slack to Provide Admins with real-time information
+category: Content Sharing
 
 info_url: https://github.com/AustinCommunityCollege/SlackResourceSpaceInt
 

@@ -20,4 +20,6 @@ https://api.slack.com/incoming-webhooks
 7. Message sent to older devices - Seen by devices that cannot handle HTML
 
 
+This plugin relies on curl to work, if you do not have it on your server - it can be installed on ubuntu using cli
 
+sudo apt-get install php-curl
